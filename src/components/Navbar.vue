@@ -4,9 +4,6 @@
     <div class="navbar__brand">
       <router-link to="/">Sistema de Bodega</router-link>
     </div>
-    <div class="navbar__toggle" @click="toggleSidebar">
-      <i class="fas fa-bars"></i>
-    </div>
     <div class="navbar__links">
       <router-link to="/register">Registro</router-link>
       <router-link to="/login">Inicio de Sesión</router-link>
@@ -17,11 +14,7 @@
 
 <script>
 export default {
-  methods: {
-    toggleSidebar() {
-      this.$emit('toggle-sidebar');
-    }
-  }
+  name: 'Navbar'
 }
 </script>
 
@@ -37,21 +30,14 @@ export default {
 .navbar__brand {
   font-size: 1.5rem;
 }
-.navbar__toggle {
-  display: none;
-  cursor: pointer;
-}
 .navbar__links a {
   margin-left: 1rem;
   color: #fff;
   text-decoration: none;
 }
 @media (max-width: 768px) {
-  .navbar__links {
+  .navbar {
     display: none;
-  }
-  .navbar__toggle {
-    display: block;
   }
 }
 </style>
